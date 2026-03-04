@@ -9,7 +9,7 @@ numero_tentativas = 3
 #definição da função de laço (for utilizando o atributo range) para repetir a quantidade de rodadas (print das tentativas, definição do input, mostrar qual o número chutado e a função de acerto)
 for rodada in range(1, numero_tentativas + 1):
 #o python vai substituir as chaves pelos valores que estão dentro da função format. (string interpolation)
-    print ("TENTATIVAS {} DE {}".format(rodada, numero_tentativas))
+    print ("TENTATIVAS {0} DE {1}".format(rodada, numero_tentativas))
     chute = int(input("Digite o seu número entre 1 e 40: "))
     print ("Você digitou ", chute)
 #define um laço que impede o jogador de chutar um número menor que 1 e maior que 40
