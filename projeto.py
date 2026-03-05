@@ -22,7 +22,7 @@ if(nivel == 1 ):
 elif( nivel == 2):
     numero_tentativas = 10
 else:
-    numero_tentativas = 5
+    numero_tentativas = 5 
 
 #definição da função de laço (for utilizando o atributo range) para repetir a quantidade de rodadas (print das tentativas, definição do input, mostrar qual o número chutado e a função de acerto)
 for rodada in range(1, numero_tentativas + 1):
@@ -50,7 +50,7 @@ for rodada in range(1, numero_tentativas + 1):
         elif(chute_maior):
           print("O número é maior que", chute )
 #definição de quantos pontos o usuário fez
-        pontos_perdidos = abs(numero_secreto - chute)
+        pontos_perdidos = abs(numero_secreto - chute) 
         pontos = pontos - pontos_perdidos
 
-print("Fim do jogo e fez {} pontos!".format(pontos))
+print("Fim do jogo, o número era {1} e você fez {0} pontos!".format(pontos, numero_secreto))
