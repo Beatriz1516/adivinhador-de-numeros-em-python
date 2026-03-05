@@ -1,10 +1,28 @@
+#importa a função que não é build-in, random
+import random
+
 print("******************************************")
 print("*Bem-vindo ao jogo de descobrir números*")
 print("******************************************")
 
-#definição das variáveis do número secreto, das tentativas e do número de rodadas
-numero_secreto = 22
-numero_tentativas = 3
+#definição das variáveis do número secreto com o random, e o número de tentativas com a escolha de nível
+numero_secreto = random.randrange(1, 41)
+numero_tentativas = 0
+pontos = 200
+
+#input para o usuário escolher qual o nível de dificuldade ele quer
+print ("Qual nível de dificuldade você quer?")
+print ("[1] fácil [2] médio [3] difícil")
+
+nivel = int(input("Define o nível: "))
+
+#definir o número de tentativas apartir do nível escolhido pelo usuário
+if(nivel == 1 ):
+    numero_tentativas = 15
+elif( nivel == 2):
+    numero_tentativas = 10
+else:
+    numero_tentativas = 5
 
 #definição da função de laço (for utilizando o atributo range) para repetir a quantidade de rodadas (print das tentativas, definição do input, mostrar qual o número chutado e a função de acerto)
 for rodada in range(1, numero_tentativas + 1):
@@ -23,7 +41,7 @@ for rodada in range(1, numero_tentativas + 1):
     chute_maior = chute < numero_secreto
 #função de condição de acerto (acertou, maior que o número ou menor que o número)
     if (acertou):
-          print ("Você acertou! :)")
+          print ("Você acertou! E fez {} pontos:)".format(pontos))
 #comando de parar e sair do laço caso o jogador acerte 
           break
     else:
@@ -31,5 +49,8 @@ for rodada in range(1, numero_tentativas + 1):
           print("O número é menor que ", chute )
         elif(chute_maior):
           print("O número é maior que", chute )
+#definição de quantos pontos o usuário fez
+        pontos_perdidos = abs(numero_secreto - chute)
+        pontos = pontos - pontos_perdidos
 
-print("Fim do jogo")
+print("Fim do jogo e fez {} pontos!".format(pontos))
