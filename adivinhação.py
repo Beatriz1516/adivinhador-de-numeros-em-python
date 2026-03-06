@@ -1,6 +1,6 @@
 #importa a função que não é build-in, random
 import random
-
+#define a função de escolha do jogo adivinhação
 def jogar():
 
     print("******************************************")
@@ -56,3 +56,6 @@ def jogar():
             pontos = pontos - pontos_perdidos
 
     print("Fim do jogo, o número era {1} e você fez {0} pontos!".format(pontos, numero_secreto))
+#quando o arquivo for executar fora da função ele define name como main, e ele pode ser executado. Mas, quando o arquivo jogos for executado a pasta só será importada.
+if(__name__ == "__main__"):
+    jogar()
