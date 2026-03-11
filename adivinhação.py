@@ -21,12 +21,12 @@ def jogar():
     #definir o número de tentativas apartir do nível escolhido pelo usuário
     if(nivel == 1 ):
         numero_tentativas = 15
-    elif( nivel == 2):
+    elif(nivel == 2 ):
         numero_tentativas = 10
     else:
         numero_tentativas = 5 
 
-    #definição da função de laço (for utilizando o atributo range) para repetir a quantidade de rodadas (print das tentativas, definição do input, mostrar qual o número chutado e a função de acerto)
+    #definição da função de laço (for utilizando o atributo range) para repetir a quantidade de rodadas, (print das tentativas, definição do input, mostrar qual o número chutado e a função de acerto)
     for rodada in range(1, numero_tentativas + 1):
     #o python vai substituir as chaves pelos valores que estão dentro da função format. (string interpolation)
         print ("TENTATIVAS {0} DE {1}".format(rodada, numero_tentativas))
@@ -35,27 +35,25 @@ def jogar():
     #define um laço que impede o jogador de chutar um número menor que 1 e maior que 40
         if (chute < 1 or chute > 40):
             print("***Você deve digitar um número entre 1 e 40!***")
-    #comando irmão do break, mas que faz o laço continue
-            continue
+            continue #comando irmão do break, mas que faz o laço continue
     #definição de variáveis de acerto (acertou, maior ou menor)
         acertou = chute == numero_secreto
-        chute_menor = chute > numero_secreto
-        chute_maior = chute < numero_secreto
+        chute_menor = chute < numero_secreto
+        chute_maior = chute > numero_secreto
     #função de condição de acerto (acertou, maior que o número ou menor que o número)
         if (acertou):
             print ("Você acertou! E fez {} pontos:)".format(pontos))
-    #comando de parar e sair do laço caso o jogador acerte 
-            break
+            break #comando de parar e sair do laço caso o jogador acerte 
         else:
             if (chute_menor):
-                print("O número é menor que ", chute )
-            elif(chute_maior):
-                print("O número é maior que", chute )
+                print("O número é maior que ", chute )
+            elif (chute_maior):
+                print("O número é menor que", chute )
     #definição de quantos pontos o usuário fez
-            pontos_perdidos = abs(numero_secreto - chute) 
+            pontos_perdidos = abs(numero_secreto - chute) #abs retorna o valor absoluto — valor positivo.
             pontos = pontos - pontos_perdidos
 
     print("Fim do jogo, o número era {1} e você fez {0} pontos!".format(pontos, numero_secreto))
-#quando o arquivo for executar fora da função ele define name como main, e ele pode ser executado. Mas, quando o arquivo jogos for executado a pasta só será importada.
+#quando o arquivo for executar fora da função ele define name como main, e ele pode ser executado. Mas, quando o arquivo 'jogos' for executado a pasta só será importada.
 if(__name__ == "__main__"):
     jogar()

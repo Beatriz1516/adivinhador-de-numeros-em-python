@@ -11,11 +11,11 @@ def escolha_de_jogo ():
     print("[1] Forca [2] Adivinhação") 
     jogo = int(input("Qual jogo?"))
     #função de escolha de qual jogo o jogador quer jogar
-    if(jogo == 1):
+    if (jogo == 1):
         print("Jogando forca")
     #o nome do módulo/arquivo antes da função
         forca.jogar()
-    elif(jogo == 2):
+    elif (jogo == 2):
         print("Jogo de descobrir números")
     #o nome do módulo/arquivo antes da função
         adivinhação.jogar()
