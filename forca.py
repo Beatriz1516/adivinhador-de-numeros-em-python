@@ -12,16 +12,17 @@ def jogar():
     acertou = False
 
 #definição do laço de repetição para continuar jogando
-    while(not enforcou and not acertou):
-#definição da interação com o usuário, definição do input do chute
+    while(not acertou and not enforcou):
         chute = input("Qual a letra?")
+        chute = chute.strip()
+        
+        index = 1
 #utiliza o for para verificar a sequência (de caracteres)
         for letra in palavra_secreta:
-            if (chute == letra):
-                print(chute)
-                print("Não tem essa letra!")
-                continue
-                
+            if(chute.upper() == letra.upper()):
+                print("A letra {1} tem na posição {0}.".format(index, letra.upper()))
+            index = index + 1      
+                      
         print("jogando...")
 
 #quando o arquivo for executar fora da função ele define name como main, e ele pode ser executado. Mas, quando o arquivo jogos for executado a pasta só será importada.
