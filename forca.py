@@ -6,7 +6,7 @@ def jogar():
     print("Fim de jogo")
     
 #definição da palavra secreta 
-    palavra_secreta = "abacate"
+    palavra_secreta = "paracetamol"
 #definição das variáveis de acerto ou enforco
     enforcou = False
     acertou = False
