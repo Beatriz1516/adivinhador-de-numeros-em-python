@@ -38,12 +38,15 @@ def jogar():
 
 #repetição de quais letras falta descobrir, se erros < 6 (continua), se erros = 6 (enforcado)
         letras_faltando = (letras_acertadas.count("_"))
-        if (erros == 1):
-            print("Você já errou {1} vez, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
-        elif (erros < 6):
-            print("Você já errou {1} vezes, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
+        if (erros == 0):
+            print("Você não errou nenhuma vez, faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        elif (erros == 1 or erros < 6):
+            if (erros == 1):
+                print("Você já errou {1} vez, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
+            elif (erros < 6):
+                print("Você já errou {1} vezes, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
         else:
-            print("Você não conseguiu acertar a palavra secreta! Era {} :(".format(palavra_secreta))
+            print("Você não conseguiu acertar a palavra secreta! Era {0} :(".format(palavra_secreta))
             if (print("Fim do jogo")):
                 break
 
