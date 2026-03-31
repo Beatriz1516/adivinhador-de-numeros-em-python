@@ -42,13 +42,86 @@ def mensagem_ganhador(palavra_secreta, letras_acertadas):
     print("        '-------'       ")
 def zero_erros(letras_faltando, erros):
     print("Você não errou nenhuma vez, faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+    print("  _______     ")
+    print(" |/      |    ")
+    print(" |            ")
+    print(" |            ")
+    print(" |            ")
+    print(" |            ")
+    print(" |            ")
+    print("_|___         ")
 def de_1_erro_ate_6(erros,letras_faltando):
     if (erros == 1):
-        print("Você já errou {1} vez, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
-    elif (erros < 6):
-        print("Você já errou {1} vezes, faltam {2} tentativas e {0} letras".format(letras_faltando, erros, 6-erros))
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+        print("_|___         ")
+    elif (erros == 2):
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |       |    ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+        print("_|___         ")
+    elif (erros == 3):
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+        print("_|___         ")   
+    elif (erros == 4):
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+        print("_|___         ")
+    elif (erros == 5):
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+        print(" |            ")
+        print("_|___         ")
+    else:
+        print("Faltam {1} tentativas e {0} letras".format(letras_faltando, 6-erros))
+        print("  _______     ")
+        print(" |/      |    ")
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+        print(" |            ")
+        print("_|___         ")
 def mensagem_perdedor(palavra_secreta):
     print("Você não conseguiu acertar a palavra secreta e foi enforcado! Era {0} :(".format(palavra_secreta))
+    print("  _______     ")
+    print(" |/      |    ")
+    print(" |      (_)   ")
+    print(" |      \|/   ")
+    print(" |       |    ")
+    print(" |      / \   ")
+    print(" |            ")
+    print("_|___         ")
+    print()
     print("    _______________         ")
     print("   /               \       ")
     print("  /                 \      ")
@@ -80,7 +153,7 @@ def jogar():
     acertou = False
     erros= 0
 
-#definição da repetição do jogo, de entrada do chute e verificação de acerto
+#definição da repetição do jogo, de entrada do chute e verificação de qual o index do acerto
     while(not acertou and not enforcou):
 
         chute = input_jogador()
@@ -101,7 +174,7 @@ def jogar():
         letras_faltando = (letras_acertadas.count("_"))
         if (erros == 0):
             zero_erros(letras_faltando, erros)
-        elif (erros == 1 or erros < 6):
+        elif (erros == 1 or erros < 7):
             de_1_erro_ate_6(erros,letras_faltando)
         else:
             mensagem_perdedor(palavra_secreta)
