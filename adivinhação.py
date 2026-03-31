@@ -1,11 +1,14 @@
 #importa a função que não é build-in, random
 import random
-#define a função de escolha do jogo adivinhação
-def jogar():
 
+def apresentação_jogo():
     print("******************************************")
     print("*Bem-vindo ao jogo de descobrir números*")
     print("******************************************")
+#define a função de escolha do jogo adivinhação
+def jogar():
+
+    apresentação_jogo()
 
     #definição das variáveis do número secreto com o random, e o número de tentativas com a escolha de nível
     numero_secreto = random.randrange(1, 41)
