@@ -1,12 +1,22 @@
+import random
+
 #define a função de jogar o jogo da forca
 def jogar():
     print("******************************************")
     print("********Bem-vindo ao jogo da forca********")
     print("******************************************")
-    
+#abre o arquivo de palavras aleatórias, fecha e gera uma leitura aleatória das palavras do arquivo
+    arquivo = open("palavras_secretas.txt", "r")
+    palavras = []
+    for linha in arquivo:
+        palavras.append(linha.strip().upper())
+    arquivo.close()
+
+    numero_palavras_secreta = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[numero_palavras_secreta].upper()
+
 #definição da palavra secreta e das letras acertadas
-    palavra_secreta = "paracetamol".upper()
-    letras_acertadas = ["_","_","_","_","_","_","_","_","_","_","_"]
+    letras_acertadas = ["_" for letra in palavra_secreta]
     
 #definição das variáveis de acerto, erros e enforco
     enforcou = False
@@ -32,7 +42,7 @@ def jogar():
 #se não tiver mais letras a serem encontradas, o jogador finaliza por acerto
         acertou = "_" not in letras_acertadas
         if (acertou):
-            print("Você acertou a palavra secreta!")
+            print("Você acertou a palavra secreta! Era {}".format(palavra_secreta))
             break
         print(letras_acertadas)
 
